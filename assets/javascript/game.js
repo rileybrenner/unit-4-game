@@ -13,7 +13,7 @@ $( document ).ready(function(){
     // (Max - min + 1) + min
     // Random number has to be between 1 - 12
     // Each jewel is assigned a random number
-    var userTotal= 0; 
+    var playerTotal= 0; 
     var wins= 0;
     var losses = 0;
     //  Decaring variables for tallies
@@ -28,69 +28,69 @@ $( document ).ready(function(){
         var crystal2= Math.floor(Math.random()*(13-1)+1);
         var crystal3= Math.floor(Math.random()*(13-1)+1);
         var crystal4= Math.floor(Math.random()*(13-1)+1);
-        userTotal= 0;
-        $('#finalScore').text(userTotal);
+        playerTotal= 0;
+        $('#totalScore').text(playerTotal);
         } 
-  //adds the wins to the userTotal
+  //adds the wins to the playerTotal
 
   function wohoo(){
-  alert("You won!");
+  alert("You win!");
     wins++; 
     $('#winsCounts').text(wins);
     reset();
   }
-  //addes the losses to the userTotal
-  function loser(){
-  alert ("You lose!");
+  //addes the losses to the playerTotal
+  function youLost(){
+  alert ("You lost!");
     losses++;
     $('#lossesCount').text(losses);
     reset()
   }
   //on click events for each crystal
     $('#one').on ('click', function(){
-      userTotal = userTotal + crystal1;
-      console.log("New userTotal= " + userTotal);
-      $('#finalScore').text(userTotal); 
-          if (userTotal == Random){
+      playerTotal = playerTotal + crystal1;
+      console.log("New playerTotal= " + playerTotal);
+      $('#totalScore').text(playerTotal); 
+          if (playerTotal == Random){
             wohoo();
           }
-          else if ( userTotal > Random){
-            loser();
+          else if ( playerTotal > Random){
+            youLost();
           }   
     })  
     $('#two').on ('click', function(){
-      userTotal = userTotal + crystal2;
-      console.log("New userTotal= " + userTotal);
-      $('#finalScore').text(userTotal); 
-          if (userTotal == Random){
+      playerTotal = playerTotal + crystal2;
+      console.log("New playerTotal= " + playerTotal);
+      $('#totalScore').text(playerTotal); 
+          if (playerTotal == Random){
             wohoo(); 
           }
-          else if ( userTotal > Random){
-            loser();
+          else if ( playerTotal > Random){
+            youLost();
           } 
     })  
     $('#three').on ('click', function(){
-      userTotal = userTotal + crystal3;
-      console.log("New userTotal= " + userTotal);
-      $('#finalScore').text(userTotal);
+      playerTotal = playerTotal + crystal3;
+      console.log("New playerTotal= " + playerTotal);
+      $('#totalScore').text(playerTotal);
 
-      if (userTotal == Random){
+      if (playerTotal == Random){
             wohoo();
           }
-          else if ( userTotal > Random){
-            loser();
+          else if ( playerTotal > Random){
+            youLost();
           } 
     })  
     $('#four').on ('click', function(){
-      userTotal = userTotal + crystal4;
-      console.log("New userTotal= " + userTotal);
-      $('#finalScore').text(userTotal); 
+      playerTotal = playerTotal + crystal4;
+      console.log("New playerTotal= " + playerTotal);
+      $('#totalScore').text(playerTotal); 
         
-            if (userTotal == Random){
+            if (playerTotal == Random){
             wohoo();
           }
-          else if ( userTotal > Random){
-            loser();
+          else if ( playerTotal > Random){
+            youLost();
           }
     });   
   }); 
